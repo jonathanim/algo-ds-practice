@@ -44,7 +44,7 @@ class LinkedList {
     this.length--;
     return this.current;
   }
-
+  //remove at head (beginning of linkedlist)
   shift() {
     if (!this.head) {
       return undefined;
@@ -55,6 +55,16 @@ class LinkedList {
     this.length--;
     return removed;
   }
+  //add at before head (beginning of linkedlist)
+  unshift(value) {
+    let newNode = new Node(value);
+    let currentHead = this.head;
+
+    this.head = newNode;
+    this.head.next = currentHead;
+
+    return this;
+  }
 }
 
 let ll = new LinkedList();
@@ -64,8 +74,6 @@ ll.push("harriot");
 ll.push("james");
 ll.push("dan");
 ll.push("jon");
+ll.unshift("tyson");
 
-ll.pop();
-ll.pop();
-ll.shift();
 console.log(ll);
