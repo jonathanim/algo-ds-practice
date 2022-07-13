@@ -5,7 +5,7 @@ const binarySearch = (arr, target) => {
 
     while (start <= end) {
         let middle = start + Math.floor((end - start) / 2);
-        console.log("tried")
+
         if (arr[middle] == target) {
             return middle;
         }
